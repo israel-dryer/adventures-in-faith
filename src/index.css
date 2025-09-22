@@ -1,0 +1,17 @@
+.app-title {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: clamp(1.75rem, 2.5vw + 1rem, 40px);
+    font-weight: 500;
+}
+
+.heading-1 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: clamp(1.75rem, 2.5vw + 1rem, 36px);
+    font-weight: 500;
+}
+
+.heading-2 {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: clamp(1.75rem, 2vw, 1rem);
+    font-weight: 600;
+}

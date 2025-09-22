@@ -1,0 +1,20 @@
+import React from 'react';
+import {Heading, VStack} from "@chakra-ui/react";
+import books from "../data/books.js";
+import BookListItem from "../components/BookListItem.jsx";
+
+const BooksPage = () => {
+    return (
+        <VStack gap={8} p={8}>
+            <Heading className='heading-1'>Books</Heading>
+
+            <VStack gap={16} maxWidth={750}>
+                {books.map((book) => (<BookListItem key={book.title} book={book}/>))}
+            </VStack>
+
+        </VStack>
+
+    );
+};
+
+export default BooksPage;
