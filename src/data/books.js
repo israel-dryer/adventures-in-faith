@@ -10,7 +10,7 @@ const books = [
             '\n' +
             'Told with humility, humor, and a traveler’s eye for detail, Thailand  Adventure invites readers into a lived story of faith, culture, and compassion—where small acts of love ripple across mountains, markets, and generations.',
         meta: "Memoir • Jerusalem • ~200–250 pp (scanned images + OCR) • Pub. 2000",
-        stub: '/books/jerusalem-adventure'
+        slug: '/books/jerusalem-adventure'
     },
     {
         image: "books/thailand-adventure/pages/thailand-adventure.001-1600.webp",
@@ -23,7 +23,7 @@ const books = [
             '\n' +
             'With vivid scenes and an honest voice, the memoir records healings and heartbreaks, baptisms and bureaucracies, and the stubborn joy of serving in a city holy to many and easy for none. Part travelogue, part ministry diary, this is a true story about risk, resilience, and the relentless love of God.',
         meta: "Memoir • Thailand • ~250 pp (scanned images + OCR) • Pub. 2001",
-        stub: '/books/thailand-adventure'
+        slug: '/books/thailand-adventure'
     },
 
 ];

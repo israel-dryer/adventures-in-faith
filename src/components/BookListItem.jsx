@@ -8,7 +8,7 @@ const BookListItem = ({book}) => {
     const bookId =
         book.slug ??
         book.id ??
-        (book.stub ? book.stub.replace(/^\/+|\/+$/g, "").split("/").pop() : "");
+        (book.slug ? book.slug.replace(/^\/+|\/+$/g, "").split("/").pop() : "");
     const pdfHref = `${BASE}/books/${bookId}/${bookId}.pdf`;
 
     return (
@@ -16,7 +16,7 @@ const BookListItem = ({book}) => {
             <VStack gap={8}>
                 <Image src={book.image} maxWidth={{base: '100%', md: 300}} boxShadow="xl"/>
                 <HStack w="full">
-                    <Button flex={1} backgroundColor="primary" as={Link} to={book.stub}>
+                    <Button flex={1} backgroundColor="primary" as={Link} to={book.slug}>
                         Read
                     </Button>
 
