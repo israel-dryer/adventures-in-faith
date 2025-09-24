@@ -5,8 +5,8 @@ import BookListItem from "../components/BookListItem.jsx";
 
 const BooksPage = () => {
     return (
-        <VStack gap={8} p={8}>
-            <Heading className='heading-1'>Books</Heading>
+        <VStack gap={8} paddingY={8}>
+            <Heading className='heading-1' paddingY={4}>Duane's Books</Heading>
 
             <VStack gap={16} maxWidth={750}>
                 {books.map((book) => (<BookListItem key={book.title} book={book}/>))}

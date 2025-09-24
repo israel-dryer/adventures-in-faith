@@ -1,15 +1,14 @@
 import React from 'react';
 import {Box, Heading, Image, Text, VStack} from "@chakra-ui/react";
-import duane from '../assets/duane-image.jpg';
 
 const BioPage = () => {
     return (
-        <VStack gap={8} p={8}>
-            <Heading className='heading-1'>Biography</Heading>
+        <VStack gap={8} paddingY={8}>
+            <Heading className='heading-1' paddingY={4}>Biography</Heading>
             <VStack>
-                <Image src={duane} maxWidth={250} borderRadius={4}></Image>
-                <Text size={12} color='gray.500' fontStyle='italic'>Image courtesy of the Klepel Family</Text>
+                <Image src="bio/duane-profile-5-4.png" maxWidth={250} borderRadius={8} filter='grayscale(100%)'></Image>
                 <Text size={20} fontWeight='medium'>Mar 2, 1937 - Oct 28, 2024</Text>
+
             </VStack>
             <VStack gap={4} maxWidth={750}>
                 <Box>

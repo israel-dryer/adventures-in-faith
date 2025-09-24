@@ -11,8 +11,8 @@ const FeatureBook = ({book}) => {
                 <Text>{book.brief}</Text>
                 <Text>{book.meta}</Text>
                 <HStack justify={{base: 'center', md: 'left'}} w='full' mt={{base: 4, md: 8}}>
-                    <Button as={Link} to={book.stub}>Start Reading</Button>
-                    <Button bg={'gray.200'} color={'gray.900'} as={Link} to={book.stub}>About this Book</Button>
+                    <Button backgroundColor="primary" variant="solid" as={Link} to={book.stub}>Start Reading</Button>
+                    <Button color="primary" variant="outline" as={Link} to={book.stub}>About this Book</Button>
                 </HStack>
             </VStack>
         </Flex>
