@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (debug)
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: write          # required by actions/deploy-pages
+  id-token: write       # required by actions/deploy-pages
 
 concurrency:
   group: "pages"
@@ -18,23 +18,46 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 🧾 Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: 🧰 Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: 'npm'
+          node-version: 20      # LTS; switch to 22 only if your project requires it
+          cache: npm
 
-      - run: npm ci
-      - run: npm run build
+      - name: 📦 Install deps
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            echo "No package-lock.json found; using npm install"
+            npm install
+          fi
 
-      # SPA fallback
-      - run: cp dist/index.html dist/404.html
+      - name: 🛠 Build
+        run: npm run build
 
-      # Ensure CNAME is present even if you didn't put it in /public
-      - run: 'echo books.klepel.org > dist/CNAME'
+      - name: 🔎 Show build outputs
+        run: |
+          echo "== repo root =="
+          ls -la
+          echo "== dist (if present) =="
+          ls -la dist || true
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: 🧩 SPA fallback + CNAME
+        run: |
+          if [ -f dist/index.html ]; then
+            cp dist/index.html dist/404.html
+            echo books.klepel.org > dist/CNAME
+          else
+            echo "ERROR: dist/index.html not found. Build likely failed or outDir is not 'dist'."
+            exit 1
+          fi
+
+      - name: 📦 Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -46,4 +69,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
+        name: 🚀 Deploy to Pages
         uses: actions/deploy-pages@v4
