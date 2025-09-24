@@ -82,9 +82,6 @@ const Header = () => {
                             {label}
                         </Link>
                     ))}
-                    <IconButton>
-
-                    </IconButton>
                 </HStack>
             </VStack>
         </>
