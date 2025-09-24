@@ -5,7 +5,6 @@ import "@fontsource/montserrat-alternates/400.css";
 import "@fontsource/montserrat-alternates/500.css";
 import "@fontsource/montserrat-alternates/700.css";
 
-
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {BrowserRouter, Route, Routes} from "react-router";
@@ -16,6 +15,11 @@ import BooksPage from "./pages/BooksPage.jsx";
 import AppLayout from "./components/AppLayout.jsx";
 import JerusalemBookPage from "./pages/JerusalemBookPage.jsx";
 import ThailandBookPage from "./pages/ThailandBookPage.jsx";
+
+// optional explicit registration
+import {registerSW} from 'virtual:pwa-register'
+
+registerSW({immediate: true})
 
 
 createRoot(document.getElementById('root')).render(
