@@ -1,7 +1,7 @@
 import React from 'react';
 import {Heading, HStack, Icon, IconButton, Link, Menu, Portal, Text, VStack} from "@chakra-ui/react";
 import {Link as RouterLink, NavLink} from 'react-router';
-import {IoHome, IoLibrary, IoMenu, IoPerson} from "react-icons/io5";
+import {MdHome, MdLocalLibrary, MdMenu, MdPerson} from "react-icons/md";
 
 const Header = () => {
     return (
@@ -13,22 +13,22 @@ const Header = () => {
                     <Menu.Root>
                         <Menu.Trigger asChild>
                             <IconButton variant="ghost" aria-label='Open menu' size='lg' ms='auto'>
-                                <IoMenu></IoMenu>
+                                <MdMenu></MdMenu>
                             </IconButton>
                         </Menu.Trigger>
                         <Portal>
                             <Menu.Positioner>
                                 <Menu.Content fontFamily="Montserrat Variable">
                                     <Menu.Item value={'home'} as={RouterLink} to='/'>
-                                        <Icon><IoHome></IoHome></Icon>
+                                        <Icon><MdHome></MdHome></Icon>
                                         <Text ms={2}>Home</Text>
                                     </Menu.Item>
                                     <Menu.Item value={'books'} as={RouterLink} to={'/books'}>
-                                        <Icon><IoLibrary></IoLibrary></Icon>
+                                        <Icon><MdLocalLibrary></MdLocalLibrary></Icon>
                                         <Text ms={2}>Books</Text>
                                     </Menu.Item>
                                     <Menu.Item value={'bio'} as={RouterLink} to={'/bio'}>
-                                        <Icon><IoPerson></IoPerson></Icon>
+                                        <Icon><MdPerson></MdPerson></Icon>
                                         <Text ms={2}>Bio</Text>
                                     </Menu.Item>
                                 </Menu.Content>
@@ -82,6 +82,9 @@ const Header = () => {
                             {label}
                         </Link>
                     ))}
+                    <IconButton>
+
+                    </IconButton>
                 </HStack>
             </VStack>
         </>
