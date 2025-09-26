@@ -9,7 +9,7 @@ const BooksPage = () => {
             <Heading className='heading-1' paddingY={4}>Duane's Books</Heading>
 
             <VStack gap={16} maxWidth={750}>
-                {books.map((book) => (<BookListItem id={book.slug} key={book.title} book={book}/>))}
+                {books.map((book) => (<BookListItem id={book.id} key={book.title} book={book}/>))}
             </VStack>
 
         </VStack>

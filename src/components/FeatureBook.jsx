@@ -11,8 +11,8 @@ const FeatureBook = ({book}) => {
                 <Text>{book.brief}</Text>
                 <Text>{book.meta}</Text>
                 <HStack justify={{base: 'center', md: 'left'}} w='full' mt={{base: 4, md: 8}}>
-                    <Button backgroundColor="primary" variant="solid" as={Link} to={book.slug}>Start Reading</Button>
-                    <Button color="primary" variant="outline" as={Link} to={'/books#' + book.slug}>About this Book</Button>
+                    <Button backgroundColor="primary" variant="solid" as={Link} to={`/reader/${book.id}`}>Start Reading</Button>
+                    <Button color="primary" variant="outline" as={Link} to={`/books/#${book.id}`}>About this Book</Button>
                 </HStack>
             </VStack>
         </Flex>

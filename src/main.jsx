@@ -31,8 +31,8 @@ createRoot(document.getElementById('root')).render(
                         <Route path="/" element={<HomePage/>}/>
                         <Route path="/bio" element={<BioPage/>}/>
                         <Route path="/books" element={<BooksPage/>}/>
-                        <Route path="/books/jerusalem-adventure" element={<JerusalemBookPage/>}/>
-                        <Route path="/books/thailand-adventure" element={<ThailandBookPage/>}/>
+                        <Route path="/reader/jerusalem-adventure" element={<JerusalemBookPage/>}/>
+                        <Route path="/reader/thailand-adventure" element={<ThailandBookPage/>}/>
                     </Route>
 
                 </Routes>

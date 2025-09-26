@@ -4,15 +4,12 @@ import {Link} from "react-router";
 
 const BookListItem = ({book}) => {
     // Works with Vite/React public/… assets even when BASE_URL is set
-    const bookId = book.id;
-    const pdfHref = `/books/${bookId}`;
-
     return (
         <Flex direction={{base: 'column', md: 'row'}} gap={8} align={{base: 'center', md: 'start'}}>
             <VStack gap={8}>
                 <Image src={book.image} maxWidth={{base: '100%', md: 300}} boxShadow="xl"/>
                 <HStack w="full">
-                    <Button flex={1} backgroundColor="primary" as={Link} to={book.slug}>
+                    <Button flex={1} backgroundColor="primary" as={Link} to={`/reader/${book.id}`}>
                         Read
                     </Button>
 
@@ -22,8 +19,8 @@ const BookListItem = ({book}) => {
                         variant="outline"
                         color="primary"
                         as="a"
-                        href={pdfHref}
-                        download={`${pdfHref}/${bookId}.pdf`}
+                        href={book.pdf}
+                        download={book.pdf}
                         target="_blank"           // optional: also open in a new tab
                         rel="noopener noreferrer" // safe when using target=_blank
                     >
