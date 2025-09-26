@@ -1,5 +1,6 @@
 const books = [
     {
+        id: 'jerusalem-adventure',
         image: "books/jerusalem-adventure/pages/jerusalem-adventure.001-1600.webp",
         title: 'Jerusalem Adventure',
         pdf: 'books/jerusalem-adventure/jerusalem-adventure.pdf',
@@ -13,6 +14,7 @@ const books = [
         slug: '/books/jerusalem-adventure'
     },
     {
+        id: 'thailand-adventure',
         image: "books/thailand-adventure/pages/thailand-adventure.001-1600.webp",
         title: 'Thailand Adventure',
         pdf: 'books/thailand-adventure/thailand-adventure.pdf',

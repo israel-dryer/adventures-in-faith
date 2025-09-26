@@ -4,12 +4,8 @@ import {Link} from "react-router";
 
 const BookListItem = ({book}) => {
     // Works with Vite/React public/… assets even when BASE_URL is set
-    const BASE = (import.meta?.env?.BASE_URL ?? "/").replace(/\/+$/, "");
-    const bookId =
-        book.slug ??
-        book.id ??
-        (book.slug ? book.slug.replace(/^\/+|\/+$/g, "").split("/").pop() : "");
-    const pdfHref = `${BASE}/books/${bookId}/${bookId}.pdf`;
+    const bookId = book.id;
+    const pdfHref = `./books/${bookId}`;
 
     return (
         <Flex direction={{base: 'column', md: 'row'}} gap={8} align={{base: 'center', md: 'start'}}>
@@ -27,7 +23,7 @@ const BookListItem = ({book}) => {
                         color="primary"
                         as="a"
                         href={pdfHref}
-                        download={`${bookId}.pdf`}
+                        download={`${pdfHref}/${bookId}.pdf`}
                         target="_blank"           // optional: also open in a new tab
                         rel="noopener noreferrer" // safe when using target=_blank
                     >
