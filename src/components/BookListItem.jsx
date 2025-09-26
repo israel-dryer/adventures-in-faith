@@ -5,7 +5,7 @@ import {Link} from "react-router";
 const BookListItem = ({book}) => {
     // Works with Vite/React public/… assets even when BASE_URL is set
     const bookId = book.id;
-    const pdfHref = `./books/${bookId}`;
+    const pdfHref = `/books/${bookId}`;
 
     return (
         <Flex direction={{base: 'column', md: 'row'}} gap={8} align={{base: 'center', md: 'start'}}>
